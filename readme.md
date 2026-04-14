@@ -12,6 +12,7 @@ The architecture includes:
 * **Database Layer (PostgreSQL)**
 * **Load Balancer for traffic distribution**
 * **Auto Scaling for high availability**
+* **CICD Pipelines for both Frontend and Backend**
 
 ---
 
