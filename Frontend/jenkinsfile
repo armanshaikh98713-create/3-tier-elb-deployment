@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+
+
+
+    stages {
+      
+         stage('Pulling Code') {
+            steps{
+                git branch: 'main', url: 'https://github.com/armanshaikh98713-create/demo6.git'
+                //DEVELOPER KA CODE
+                // JENKINS ROOT DIRECTORY IS /var/lib/jenkins/workspace/<PIPE-NAME>/
+            }
+         }
+            stage('Sending Code'){
+                steps{
+                    sshagent(['nginx']) {
+                        sh "scp -o StrictHostKeyChecking=no * ubuntu@15.206.81.95:/tmp/CODE"
+                        sh "ssh -o StrictHostKeyChecking=no ubuntu@15.206.81.95 'sudo mv /tmp/CODE/* /var/www/html/' "
+                        sh "ssh -o StrictHostKeyChecking=no ubuntu@15.206.81.95 'sudo systemctl restart nginx' "
+                        // Sudoers list me add krna hai user ko
+                    }
+                }
+            }
+            
+        
+    }
+}
