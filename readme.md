@@ -1,4 +1,4 @@
-# 🚀 3-Tier Architecture Deployment on AWS (With Load Balancer & Auto Scaling)
+# 🚀 3-Tier Architecture Deployment on AWS (With Load Balancer ,Auto Scaling & CICD Pipelines)
 
 ## 📌 Project Overview
 
